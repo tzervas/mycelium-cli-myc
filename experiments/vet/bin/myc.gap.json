@@ -1,0 +1,219 @@
+{
+  "source": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+  "emitted_items": [
+    "co-include:RunOptions"
+  ],
+  "gaps": [
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 1,
+      "col": 1,
+      "category": "ReservedWord",
+      "rust_construct": "ReservedWord",
+      "snippet": "nodule cli.bin.myc;",
+      "reason": "derived nodule path `cli.bin.myc` has segment(s) [bin] colliding with a Mycelium reserved word — emitting them verbatim would fail to parse (`nodule cli.bin.myc;` tokenizes the colliding word as a keyword, not an identifier); each colliding segment is escaped with the `_kw` suffix (now `cli.bin_kw.myc`) rather than dropped, so distinct source files whose only differing segment is a reserved word (e.g. `l1.fuse` vs `l1.nodule`) stay distinguishable instead of both collapsing onto the same nodule path (G2/VR-5)",
+      "item_name": null
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 18,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use std :: path :: { Path , PathBuf } ;",
+      "reason": "`use std.path::Path` — `std.path` is not a sibling module OR sibling phylum transpiled in this same batch (an external crate, `std`, or simply out of this batch's target set). Flagged, not guessed (VR-5/G2); `use std.path::PathBuf` — `std.path` is not a sibling module OR sibling phylum transpiled in this same batch (an external crate, `std`, or simply out of this batch's target set). Flagged, not guessed (VR-5/G2)",
+      "item_name": null
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 19,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use std :: process :: ExitCode ;",
+      "reason": "`use std.process::ExitCode` — `std.process` is not a sibling module OR sibling phylum transpiled in this same batch (an external crate, `std`, or simply out of this batch's target set). Flagged, not guessed (VR-5/G2)",
+      "item_name": null
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 21,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use mycelium_cli :: { build , check_project , corpus_context , init , reject_unbounded_in_corpus , run_stream_parse , run_with_options , unbounded_banner , Report , RunOptions , } ;",
+      "reason": "`use mycelium_cli::build` — `build` is not among sibling `mycelium_cli`'s successfully-emitted surface in this batch (the sibling file itself gapped it rather than emitting it). Flagged, not guessed (VR-5/G2)",
+      "item_name": "co-include:RunOptions"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 21,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use mycelium_cli :: { build , check_project , corpus_context , init , reject_unbounded_in_corpus , run_stream_parse , run_with_options , unbounded_banner , Report , RunOptions , } ;",
+      "reason": "`use mycelium_cli::check_project` — `check_project` is not among sibling `mycelium_cli`'s successfully-emitted surface in this batch (the sibling file itself gapped it rather than emitting it). Flagged, not guessed (VR-5/G2)",
+      "item_name": "co-include:RunOptions"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 21,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use mycelium_cli :: { build , check_project , corpus_context , init , reject_unbounded_in_corpus , run_stream_parse , run_with_options , unbounded_banner , Report , RunOptions , } ;",
+      "reason": "`use mycelium_cli::corpus_context` — `corpus_context` is not among sibling `mycelium_cli`'s successfully-emitted surface in this batch (the sibling file itself gapped it rather than emitting it). Flagged, not guessed (VR-5/G2)",
+      "item_name": "co-include:RunOptions"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 21,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use mycelium_cli :: { build , check_project , corpus_context , init , reject_unbounded_in_corpus , run_stream_parse , run_with_options , unbounded_banner , Report , RunOptions , } ;",
+      "reason": "`use mycelium_cli::init` — `init` is not among sibling `mycelium_cli`'s successfully-emitted surface in this batch (the sibling file itself gapped it rather than emitting it). Flagged, not guessed (VR-5/G2)",
+      "item_name": "co-include:RunOptions"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 21,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use mycelium_cli :: { build , check_project , corpus_context , init , reject_unbounded_in_corpus , run_stream_parse , run_with_options , unbounded_banner , Report , RunOptions , } ;",
+      "reason": "`use mycelium_cli::reject_unbounded_in_corpus` — `reject_unbounded_in_corpus` is not among sibling `mycelium_cli`'s successfully-emitted surface in this batch (the sibling file itself gapped it rather than emitting it). Flagged, not guessed (VR-5/G2)",
+      "item_name": "co-include:RunOptions"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 21,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use mycelium_cli :: { build , check_project , corpus_context , init , reject_unbounded_in_corpus , run_stream_parse , run_with_options , unbounded_banner , Report , RunOptions , } ;",
+      "reason": "`use mycelium_cli::run_stream_parse` — `run_stream_parse` is not among sibling `mycelium_cli`'s successfully-emitted surface in this batch (the sibling file itself gapped it rather than emitting it). Flagged, not guessed (VR-5/G2)",
+      "item_name": "co-include:RunOptions"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 21,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use mycelium_cli :: { build , check_project , corpus_context , init , reject_unbounded_in_corpus , run_stream_parse , run_with_options , unbounded_banner , Report , RunOptions , } ;",
+      "reason": "`use mycelium_cli::run_with_options` — `run_with_options` is not among sibling `mycelium_cli`'s successfully-emitted surface in this batch (the sibling file itself gapped it rather than emitting it). Flagged, not guessed (VR-5/G2)",
+      "item_name": "co-include:RunOptions"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 21,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use mycelium_cli :: { build , check_project , corpus_context , init , reject_unbounded_in_corpus , run_stream_parse , run_with_options , unbounded_banner , Report , RunOptions , } ;",
+      "reason": "`use mycelium_cli::unbounded_banner` — `unbounded_banner` is not among sibling `mycelium_cli`'s successfully-emitted surface in this batch (the sibling file itself gapped it rather than emitting it). Flagged, not guessed (VR-5/G2)",
+      "item_name": "co-include:RunOptions"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 21,
+      "col": 1,
+      "category": "Import",
+      "rust_construct": "Import",
+      "snippet": "use mycelium_cli :: { build , check_project , corpus_context , init , reject_unbounded_in_corpus , run_stream_parse , run_with_options , unbounded_banner , Report , RunOptions , } ;",
+      "reason": "`use mycelium_cli::Report` — `Report` is not among sibling `mycelium_cli`'s successfully-emitted surface in this batch (the sibling file itself gapped it rather than emitting it). Flagged, not guessed (VR-5/G2)",
+      "item_name": "co-include:RunOptions"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 26,
+      "col": 1,
+      "category": "MultiStmtBody",
+      "rust_construct": "MultiStmtBody",
+      "snippet": "fn usage () -> ExitCode { eprintln ! (\"usage:\\n  \\\n         myc init  <name>\\n  \\\n         myc build [--config <manifest>] [--unbounded]\\n  \\\n         myc check [--config <manifest>]\\n  \\\n         myc test  [--config <manifest>]\\n  \\\n         myc run   [--config <manifest>] [--unbounded]  # single- or multi-nodule (M-908/M-909)\\n  \\\n         myc --stream [<file>]\\n\\\n         \\n  \\\n         --unbounded  opt-in, NON-DETERMINISTIC: lift the recursion-depth ceiling (RFC-0041 §5).\\n               \\\n         Machine-dependent; excluded from the conformance corpus; never for CI/reproducible builds.\") ; ExitCode :: from (64) }",
+      "reason": "function body contains a macro-invocation statement (e.g. `debug_assert!`/`println!`) — no macro system in this grammar fragment",
+      "item_name": "usage"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 42,
+      "col": 1,
+      "category": "MultiStmtBody",
+      "rust_construct": "MultiStmtBody",
+      "snippet": "# [doc = \" Print a [`Report`] to stderr and return its exit code.\"] fn fail (r : & Report) -> ExitCode { eprintln ! (\"{}\" , r . render ()) ; ExitCode :: from (r . exit) }",
+      "reason": "function body contains a macro-invocation statement (e.g. `debug_assert!`/`println!`) — no macro system in this grammar fragment",
+      "item_name": "fail"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 48,
+      "col": 1,
+      "category": "Other",
+      "rust_construct": "Other",
+      "snippet": "fn main () -> ExitCode { let mut args = std :: env :: args () . skip (1) ; let Some (cmd) = args . next () else { return usage () ; } ; let rest : Vec < String > = args . collect () ; match cmd . as_str () { \"init\" => match rest . as_slice () { [name] => match init (Path :: new (\".\") , name) { Ok (files) => { println ! (\"created {} file(s):\" , files . len ()) ; for f in files { println ! (\"  {}\" , f . display ()) ; } println ! (\"next: cd {name} && myc check\") ; ExitCode :: SUCCESS } Err (r) => fail (& r) , } , _ => usage () , } , \"build\" => with_run_options (& rest , \"build\" , | m , _opts | cmd_build (m)) , \"check\" => with_manifest (& rest , cmd_check) , \"test\" => with_manifest (& rest , cmd_test) , \"run\" => with_run_options (& rest , \"run\" , | m , opts | match run_with_options (m , opts) { Ok (report) => { println ! (\"{}\" , report . rendered) ; eprintln ! (\"myc: ran `{}` in {}\" , report . entry , report . source) ; ExitCode :: SUCCESS } Err (r) => fail (& r) , }) , \"--stream\" => cmd_stream (& rest) , _ => usage () , } }",
+      "reason": "method call `.skip(...)` has no proven-emitted free-fn referent in this file (neither a D4-mangled inherent `Type__skip` nor a bare inherent recorded by this file's left-to-right pass, nor a prim_map / combinator row). Emitting bare `skip(recv, …)` would fabricate an unknown prim and file-poison myc-check (G-β Rank A / G2/VR-5; residual when the method body itself gapped — e.g. M-1037 `.to_vec()` inside `read_to_end` — so the declaration was never registered)",
+      "item_name": "main"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 87,
+      "col": 1,
+      "category": "Other",
+      "rust_construct": "Other",
+      "snippet": "# [doc = \" Resolve the `--config <manifest>` flag (default `mycelium-proj.toml`) and dispatch. Used by\"] # [doc = \" `check`/`test`, which do **not** accept `--unbounded` (RFC-0041 §5: CLI-flag-only, and only on the\"] # [doc = \" execution/build drivers) — so an `--unbounded` here is an unknown flag (usage error).\"] fn with_manifest (rest : & [String] , f : impl FnOnce (& Path) -> ExitCode) -> ExitCode { let mut manifest = PathBuf :: from (\"mycelium-proj.toml\") ; let mut it = rest . iter () ; while let Some (a) = it . next () { match a . as_str () { \"--config\" => match it . next () { Some (p) => manifest = PathBuf :: from (p) , None => return usage () , } , _ => return usage () , } } f (& manifest) }",
+      "reason": "unsupported Rust type form `impl FnOnce (& Path) -> ExitCode`",
+      "item_name": "with_manifest"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 105,
+      "col": 1,
+      "category": "Other",
+      "rust_construct": "Other",
+      "snippet": "# [doc = \" Resolve `--config <manifest>` **and** the RFC-0041 §5 `--unbounded` flag for `run`/`build`, then\"] # [doc = \" dispatch. When `--unbounded` is engaged: (1) if a conformance-corpus / CI context is signalled\"] # [doc = \" ([`corpus_context`]), it is **refused** never-silently ([`reject_unbounded_in_corpus`]) — the\"] # [doc = \" deterministic corpus path must not run the machine-dependent mode; (2) otherwise a never-silent\"] # [doc = \" banner ([`unbounded_banner`]) is printed to stderr before dispatch (G2). `cmd` (`\\\"run\\\"`/`\\\"build\\\"`)\"] # [doc = \" tailors the banner's per-command effect line.\"] fn with_run_options (rest : & [String] , cmd : & str , f : impl FnOnce (& Path , & RunOptions) -> ExitCode ,) -> ExitCode { let mut manifest = PathBuf :: from (\"mycelium-proj.toml\") ; let mut opts = RunOptions :: default () ; let mut it = rest . iter () ; while let Some (a) = it . next () { match a . as_str () { \"--config\" => match it . next () { Some (p) => manifest = PathBuf :: from (p) , None => return usage () , } , \"--unbounded\" => opts . unbounded = true , _ => return usage () , } } if opts . unbounded { if corpus_context () { if let Err (r) = reject_unbounded_in_corpus (& opts) { return fail (& r) ; } } eprintln ! (\"{}\" , unbounded_banner (cmd)) ; } f (& manifest , & opts) }",
+      "reason": "unsupported Rust type form `impl FnOnce (& Path , & RunOptions) -> ExitCode`",
+      "item_name": "with_run_options"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 142,
+      "col": 1,
+      "category": "MultiStmtBody",
+      "rust_construct": "MultiStmtBody",
+      "snippet": "fn cmd_build (manifest : & Path) -> ExitCode { match build (manifest) { Ok ((spore , descriptor)) => { print ! (\"{descriptor}\") ; eprintln ! (\"myc: built {} ({})\" , spore . name , spore . id . as_str ()) ; ExitCode :: SUCCESS } Err (r) => fail (& r) , } }",
+      "reason": "function body contains a macro-invocation statement (e.g. `debug_assert!`/`println!`) — no macro system in this grammar fragment",
+      "item_name": "cmd_build"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 153,
+      "col": 1,
+      "category": "MultiStmtBody",
+      "rust_construct": "MultiStmtBody",
+      "snippet": "fn cmd_check (manifest : & Path) -> ExitCode { match check_project (manifest) { Ok (report) => { for r in & report . failures { eprintln ! (\"{}\\n\" , r . render ()) ; } if report . ok () { eprintln ! (\"myc: {} nodule(s) checked clean\" , report . checked . len ()) ; ExitCode :: SUCCESS } else { eprintln ! (\"myc: {} checked, {} failed\" , report . checked . len () , report . failures . len ()) ; ExitCode :: from (65) } } Err (r) => fail (& r) , } }",
+      "reason": "function body has a semicolon-terminated (value-discarding) statement expression before the tail — a `let`-chain body maps only simple `let x = e;` bindings plus a single trailing expression",
+      "item_name": "cmd_check"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 175,
+      "col": 1,
+      "category": "MultiStmtBody",
+      "rust_construct": "MultiStmtBody",
+      "snippet": "fn cmd_test (manifest : & Path) -> ExitCode { let code = cmd_check (manifest) ; eprintln ! (\"myc: note — `test` ran the type-check verification; a dedicated .myc unit-test runner is \\\n         future work (no user tests were discovered or executed).\") ; code }",
+      "reason": "function body contains a macro-invocation statement (e.g. `debug_assert!`/`println!`) — no macro system in this grammar fragment",
+      "item_name": "cmd_test"
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "line": 186,
+      "col": 1,
+      "category": "MultiStmtBody",
+      "rust_construct": "MultiStmtBody",
+      "snippet": "# [doc = \" `myc --stream [<file>]` — parse a `;`-terminated Mycelium component stream (M-820 / DN-57).\"] # [doc = \"\"] # [doc = \" Without a file argument, reads from stdin (`<stdin>`). With a file argument, opens and reads\"] # [doc = \" that file. The source is lexed once and the token stream is segmented at `nodule` header tokens\"] # [doc = \" into per-nodule components, each parsed with `mycelium_l1::parse`. The split is token-driven,\"] # [doc = \" so it is comment-/string-safe by construction (a `nodule`/`;` inside a comment is never a token;\"] # [doc = \" DN-57 §2). v0 I/O is whole-input-buffered (`Declared` — see [`mycelium_cli::stream_parse`]).\"] # [doc = \"\"] # [doc = \" Every malformed component surfaces an explicit error with a component:line:col location (G2).\"] # [doc = \" An unterminated component (its last item has no `;` before the next `nodule`/EOF) is likewise an\"] # [doc = \" explicit error, never a silent partial accept (G2 / DN-57 §3.1).\"] # [doc = \"\"] # [doc = \" Exit 0 on all-green; exit 65 if any component failed (or on lex error); exit 66 on I/O error.\"] fn cmd_stream (rest : & [String]) -> ExitCode { let (reader , source_name) : (Box < dyn std :: io :: Read > , String) = match rest { [] => (Box :: new (std :: io :: stdin ()) , \"<stdin>\" . to_owned ()) , [path] if ! path . starts_with ('-') => match std :: fs :: File :: open (path) { Ok (f) => (Box :: new (f) , path . clone ()) , Err (e) => { let r = Report :: new (\"myc-stream-io\" , format ! (\"{path}: {e}\") , 66) . help (\"check that the file path is correct and the file is readable\") ; return fail (& r) ; } } , _ => return usage () , } ; match run_stream_parse (reader , & source_name) { Err (r) => fail (& r) , Ok (report) => { for f in & report . failures { eprintln ! (\"{}\\n\" , f . render ()) ; } if report . ok () { eprintln ! (\"myc: stream `{}` — {} component(s) parsed clean\" , report . source_name , report . parsed_ok ,) ; ExitCode :: SUCCESS } else { eprintln ! (\"myc: stream `{}` — {} ok, {} failed\" , report . source_name , report . parsed_ok , report . parsed_err ,) ; ExitCode :: from (65) } } } }",
+      "reason": "`let` binding uses an unsupported pattern (only simple `let x = e;` is supported)",
+      "item_name": "cmd_stream"
+    }
+  ],
+  "total_top_level_items": 12
+}

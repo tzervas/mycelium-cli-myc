@@ -1,0 +1,64 @@
+// nodule: cli
+// `mycelium-cli` — the **`myc`** one-command toolchain driver (M-733; E16-1).
+//
+// A single front door over the Mycelium toolchain: `myc init` scaffolds a phylum, `myc build`
+// packages it (the content-addressed spore — M-368), `myc check` type-checks it (parse + check via
+// the L1 front-end), `myc test` runs the available verification, `myc run` executes a project
+// (single- or **multi-nodule**, M-908/M-909) through the reference interpreter, and `myc --stream`
+// parses a `;`-delimited component stream from stdin or a file (M-820 / DN-57).
+//
+// ## Error-message quality bar (DN-22 / RFC-0013)
+// Every user-visible failure is a structured [`Report`]: a stable `code`, a human-readable
+// `message`, an optional source `location`, and an actionable `help`. No raw Rust panic ever
+// reaches the user (G2 — never opaque); a failure the driver cannot honestly act on is reported as
+// such, never swallowed and never faked (VR-5).
+//
+// ## Honesty about scope (`Declared`)
+// `init` / `build` / `check` do real end-to-end work. `test` runs `check` and is explicit that a
+// dedicated `.myc` unit-test *runner* does not exist yet (it does not pretend to have run tests
+// that were never written). `run` executes a project's `.myc` sources: a **single** source follows
+// the M-908 v0 path (parse → [`check_nodule`] → [`elaborate`](mycelium_l1::elaborate) its nullary
+// `main`); **two or more** sources follow the M-909 multi-nodule path (see [`run`]'s doc for the
+// full linking model). A missing `main`, a program outside the evaluation-complete fragment, or an
+// interpreter failure are each an explicit [`Report`] — never a silent narrowing to "the first file
+// found" and never a stub that pretends to have run (G2/VR-5). `--stream` is a **token-driven**
+// component splitter: it lexes the source once ([`mycelium_l1::lexer::lex`]), segments the token
+// stream at `nodule` header tokens (`;` as `Tok::Semi` is the per-item terminator — DN-57), and
+// parse each component slice with [`mycelium_l1::parse`]. Splitting on *tokens* (not raw text) makes
+// it comment-/string-safe by construction: a `nodule`/`;` inside a `//` comment is never a token, so
+// it can never mis-split (DN-57 §2). The per-component parse bounds parse state to one component at
+// a time. **v0 I/O is whole-input-buffered** (`Declared`); true per-`;`-component incremental I/O
+// would require a resumable L1 token-stream API that does not exist yet (flagged future work).
+// @summary: best-effort transpilation via mycelium-transpile (M-873). Declared,
+// unvalidated — no Mycelium parser/typechecker confirms this output; see the
+// accompanying .gap.json for every construct this pass could not express.
+nodule cli;
+
+// The outcome of a successful `myc run` (M-908/M-909): which source ran, which entry function was
+// executed, and a rendering of the interpreter's result.
+type RunReport = RunReport(Bytes, Bytes, Bytes);
+
+impl Show[RunReport] for RunReport {
+  fn render(x: RunReport) => Bytes =
+    match x { RunReport(p0, p1, p2) => bytes_concat(bytes_concat(bytes_concat(bytes_concat(bytes_concat(bytes_concat("RunReport(", render(p0)), ", "), render(p1)), ", "), render(p2)), ")") };
+};
+
+fn eq_RunReport(a: RunReport, b: RunReport) => Binary{1} =
+    match a { RunReport(p0, p1, p2) => match b { RunReport(q0, q1, q2) => and(and(bytes_eq(p0, q0), bytes_eq(p1, q1)), bytes_eq(p2, q2)) } };
+
+// Options that tune a `myc run` (or `myc build`) invocation beyond `--config` (RFC-0041 §5 /
+// DN-84 §9.3). Additive: [`Default`] is the ordinary, deterministic, corpus-safe behavior.
+pub type RunOptions = RunOptions(Bool);
+
+impl Show[RunOptions] for RunOptions {
+  fn render(x: RunOptions) => Bytes =
+    match x { RunOptions(p0) => bytes_concat(bytes_concat("RunOptions(", render(p0)), ")") };
+};
+
+impl Init[RunOptions] for RunOptions {
+  fn init() => RunOptions =
+    RunOptions(init());
+};
+
+fn eq_RunOptions(a: RunOptions, b: RunOptions) => Binary{1} =
+    match a { RunOptions(p0) => match b { RunOptions(q0) => match p0 { True => match q0 { True => 0b1, False => 0b0 }, False => match q0 { True => 0b0, False => 0b1 } } } };

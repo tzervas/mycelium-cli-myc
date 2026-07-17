@@ -1,0 +1,103 @@
+{
+  "files": [
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+      "total_items": 12,
+      "non_test_items": 12,
+      "emitted": 1,
+      "gaps": 21,
+      "expressible_pct": 8.333333333333332,
+      "category_counts": {
+        "Import": 11,
+        "MultiStmtBody": 6,
+        "Other": 3,
+        "ReservedWord": 1
+      }
+    },
+    {
+      "file": "/root/git/isolated/mycelium/crates/mycelium-cli/src/lib.rs",
+      "total_items": 53,
+      "non_test_items": 52,
+      "emitted": 2,
+      "gaps": 58,
+      "expressible_pct": 3.8461538461538463,
+      "category_counts": {
+        "Closure": 1,
+        "DeriveAttr": 2,
+        "DeriveSatisfied": 3,
+        "GenericBound": 1,
+        "Impl": 5,
+        "Import": 9,
+        "MacroInvocation": 4,
+        "MultiStmtBody": 12,
+        "NamedFieldDrop": 2,
+        "Other": 14,
+        "Struct": 4,
+        "TestItem": 1
+      }
+    }
+  ],
+  "totals": {
+    "total_items": 65,
+    "non_test_items": 64,
+    "emitted": 3,
+    "gaps": 79,
+    "expressible_pct": 4.6875,
+    "category_counts": {
+      "Closure": 1,
+      "DeriveAttr": 2,
+      "DeriveSatisfied": 3,
+      "GenericBound": 1,
+      "Impl": 5,
+      "Import": 20,
+      "MacroInvocation": 4,
+      "MultiStmtBody": 18,
+      "NamedFieldDrop": 2,
+      "Other": 17,
+      "ReservedWord": 1,
+      "Struct": 4,
+      "TestItem": 1
+    }
+  },
+  "remap": {
+    "phylum": {
+      "source_crate": "mycelium-cli",
+      "target_phylum": "cli"
+    },
+    "nodules": [
+      {
+        "target_nodule": "cli.bin.myc",
+        "operation": "Keep",
+        "sources": [
+          {
+            "rust_path": "/root/git/isolated/mycelium/crates/mycelium-cli/src/bin/myc.rs",
+            "rust_span": null,
+            "moved_items": []
+          }
+        ],
+        "rationale": "structure-preserving 1:1 (DN-109 §5.3-B v0 default: every emitted nodule keeps its source file's mod-tree position, no restructuring proposed)",
+        "safety": "Safe",
+        "api_surface_changed": false,
+        "identity_neutral": true,
+        "guarantee": "Declared"
+      },
+      {
+        "target_nodule": "cli",
+        "operation": "Keep",
+        "sources": [
+          {
+            "rust_path": "/root/git/isolated/mycelium/crates/mycelium-cli/src/lib.rs",
+            "rust_span": null,
+            "moved_items": []
+          }
+        ],
+        "rationale": "structure-preserving 1:1 (DN-109 §5.3-B v0 default: every emitted nodule keeps its source file's mod-tree position, no restructuring proposed)",
+        "safety": "Safe",
+        "api_surface_changed": false,
+        "identity_neutral": true,
+        "guarantee": "Declared"
+      }
+    ],
+    "idiom_choices": []
+  }
+}
